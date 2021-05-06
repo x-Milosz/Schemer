@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="JSON Schema Draft 7">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="JSON Schema Draft 7" />
+              <option name="relativePathToSchema" value="https://json-schema.org/draft-07/schema" />
+              <option name="applicationDefined" value="true" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="src/main/resources/schema/pairs.yaml" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="src/main/resources/schema/stacks.yaml" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="src/main/resources/schema/helices.yaml" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="src/main/resources/schema/multiplets.yaml" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="src/main/resources/schema/ssSegments.yaml" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>
