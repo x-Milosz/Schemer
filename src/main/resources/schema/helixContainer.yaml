@@ -11,6 +11,7 @@ properties:
       $id: '#/properties/helices/items'
       additionalProperties: false
       default: {}
+      javaType: 'Helix'
       properties:
         bp_type:
           $id: '#/properties/helices/items/properties/bp_type'

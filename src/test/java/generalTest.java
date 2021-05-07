@@ -39,8 +39,8 @@ public class generalTest {
     public void parseHelicesTest() {
         try {
             HelixContainer helices = objectMapper.readValue(file, HelixContainer.class);
-            for(Helice helice : helices.getHelices()){
-                System.out.println(helice.toString());
+            for(Helix helix : helices.getHelices()){
+                System.out.println(helix.toString());
             }
         } catch (IOException e) {
             e.printStackTrace();
