@@ -31,16 +31,9 @@ properties:
           default: 0
           title: The num_nts schema
           type: integer
-      required:
-        - index
-        - num_nts
-        - nts_short
-        - nts_long
       title: The items schema
       type: object
     title: The ssSegments schema
     type: array
-required:
-  - ssSegments
 title: The root schema
 type: object

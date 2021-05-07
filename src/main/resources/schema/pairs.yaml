@@ -11,7 +11,5 @@ properties:
       $ref: 'pair.yaml'
     title: The pairs schema
     type: array
-required:
-  - pairs
 title: The root schema
 type: object

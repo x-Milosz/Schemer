@@ -14,11 +14,3 @@ properties:
         $ref: m1_chain_dbn.yaml
       m1_chain_D:
         $ref: m1_chain_dbn.yaml
-    required:
-      - all_chains
-      - m1_chain_A
-      - m1_chain_B
-      - m1_chain_C
-      - m1_chain_D
-required:
-  - dbn

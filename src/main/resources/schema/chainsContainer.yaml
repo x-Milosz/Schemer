@@ -19,14 +19,7 @@ properties:
       m1_chain_D:
         $id: '#/properties/chains/properties/m1_chain_D'
         $ref: 'm1_chain_chains.yaml'
-    required:
-      - m1_chain_A
-      - m1_chain_B
-      - m1_chain_C
-      - m1_chain_D
     title: The chains schema
     type: object
-required:
-  - chains
 title: The root schema
 type: object

@@ -41,14 +41,5 @@ properties:
     default: ''
     title: The nt2 schema
     type: string
-required:
-  - index
-  - nt1
-  - nt2
-  - bp
-  - name
-  - Saenger
-  - LW
-  - DSSR
 title: The root schema
 type: object

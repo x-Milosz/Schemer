@@ -28,7 +28,5 @@ properties:
         default: 0
         title: The num_waters schema
         type: integer
-required:
-  - metadata
 title: The root schema
 type: object

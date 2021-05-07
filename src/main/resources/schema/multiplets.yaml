@@ -36,17 +36,9 @@ properties:
           default: 0.0
           title: The planarity schema
           type: number
-      required:
-        - index
-        - num_nts
-        - nts_short
-        - nts_long
-        - planarity
       title: The items schema
       type: object
     title: The multiplets schema
     type: array
-required:
-  - multiplets
 title: The root schema
 type: object

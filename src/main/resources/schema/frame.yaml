@@ -62,7 +62,5 @@ properties:
           type: number
         title: The z_axis schema
         type: array
-required:
-  - frame
 title: The root schema
 type: object

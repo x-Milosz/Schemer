@@ -56,21 +56,9 @@ properties:
           default: ''
           title: The residue_pair schema
           type: string
-      required:
-        - index
-        - atom1_serNum
-        - atom2_serNum
-        - donAcc_type
-        - distance
-        - atom1_id
-        - atom2_id
-        - atom_pair
-        - residue_pair
       title: The items schema
       type: object
     title: The hbonds schema
     type: array
-required:
-  - hbonds
 title: The root schema
 type: object

@@ -124,29 +124,9 @@ properties:
                     default: ''
                     title: The type schema
                     type: string
-            required:
-            - index
-            - num_nts
-            - nts_short
-            - nts_long
-            - planarity
-            - G1G2_simpleParams
-            - G2G3_simpleParams
-            - G3G4_simpleParams
-            - G4G1_simpleParams
-            - type
-            - direction
-            - topo_class
-            - glyco_bond
-            - groove_type
-            - groove_distPP
-            - rmsd
-            - frame
             title: The items schema
             type: object
         title: The G4tetrads schema
         type: array
-required:
-- G4tetrads
 title: The root schema
 type: object

@@ -56,20 +56,9 @@ properties:
           default: ''
           title: The strand2 schema
           type: string
-      required:
-        - index
-        - num_stems
-        - strand1
-        - strand2
-        - bp_type
-        - helix_form
-        - num_pairs
-        - pairs
       title: The items schema
       type: object
     title: The helices schema
     type: array
-required:
-  - helices
 title: The root schema
 type: object

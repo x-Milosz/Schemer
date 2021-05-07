@@ -28,11 +28,5 @@ properties:
     default: ''
     title: The sstr schema
     type: string
-required:
-  - num_nts
-  - num_chars
-  - bseq
-  - sstr
-  - form
 title: The root schema
 type: object

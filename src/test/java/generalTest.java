@@ -1,15 +1,12 @@
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.codemodel.JCodeModel;
-import org.jsonschema2pojo.SchemaMapper;
+import com.fasterxml.jackson.databind.ObjectReader;
 import org.junit.Before;
 import org.junit.Test;
 import su.nextserver.*;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.List;
 
 /**
  * @author Miłosz Nowaczyk
@@ -42,7 +39,7 @@ public class generalTest {
     @Test
     public void parseHelicesTest() {
         try {
-            Helices helices = objectMapper.readValue(new File("/home/milosz/Pobrane/helicesExample.json"), Helices.class);
+            Helices helices = objectMapper.readValue(file, Helices.class);
             for(Helice helice : helices.getHelices()){
                 System.out.println(helice.toString());
             }
@@ -106,9 +103,19 @@ public class generalTest {
     // Ok
     @Test
     public void parseDbnTest() {
+        /*
+        //objectMapper.configure(DeserializationFeature., true);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNRESOLVED_OBJECT_IDS, false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE, false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_READING_DUP_TREE_KEY, false);
+
+         */
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true);
+
         try {
-            DbnContainer dbnContainer = objectMapper.readValue(file, DbnContainer.class);
-             Dbn dbn = dbnContainer.getDbn();
+             dbn dbn = objectMapper.readValue(file, su.nextserver.dbn.class);
              System.out.println(dbn.toString());
         } catch (IOException e) {
             e.printStackTrace();
@@ -162,5 +169,14 @@ public class generalTest {
         }
     }
 
+    @Test
+    public void parsePairTest(){
+        try {
+            Pair[] langList = objectMapper.readValue(file,  Pair[].class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
