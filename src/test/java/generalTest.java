@@ -26,7 +26,7 @@ public class generalTest {
     @Test
     public void parsePairsTest() {
         try {
-            Pairs pairs = objectMapper.readValue(file, Pairs.class);
+            PairContainer pairs = objectMapper.readValue(file, PairContainer.class);
             for(Pair pair : pairs.getPairs()){
                 System.out.println(pair.toString());
             }
@@ -35,11 +35,10 @@ public class generalTest {
         }
     }
 
-    // OK
     @Test
     public void parseHelicesTest() {
         try {
-            Helices helices = objectMapper.readValue(file, Helices.class);
+            HelixContainer helices = objectMapper.readValue(file, HelixContainer.class);
             for(Helice helice : helices.getHelices()){
                 System.out.println(helice.toString());
             }
@@ -48,11 +47,10 @@ public class generalTest {
         }
     }
 
-    // Ok
     @Test
     public void parseMultipletsTest() {
         try {
-            Multiplets multiplets = objectMapper.readValue(file, Multiplets.class);
+            MultipletContainer multiplets = objectMapper.readValue(file, MultipletContainer.class);
             for(Multiplet multiplet : multiplets.getMultiplets()) {
                 System.out.println(multiplet.toString());
             }
@@ -61,11 +59,10 @@ public class generalTest {
         }
     }
 
-    // Ok
     @Test
     public void parseStacks() {
         try {
-            Stacks stacks = objectMapper.readValue(file, Stacks.class);
+            StackContainer stacks = objectMapper.readValue(file, StackContainer.class);
             for(Stack stack : stacks.getStacks()){
                 System.out.println(stack.toString());
             }
@@ -74,11 +71,10 @@ public class generalTest {
         }
     }
 
-    // Ok
     @Test
     public void parseSsSegmentssTest() {
         try {
-            SsSegments ssSegments = objectMapper.readValue(file, SsSegments.class);
+            SsSegmentContainer ssSegments = objectMapper.readValue(file, SsSegmentContainer.class);
             for(SsSegment ssSegment : ssSegments.getSsSegments()) {
                 System.out.println(ssSegment.toString());
             }
@@ -87,11 +83,10 @@ public class generalTest {
         }
     }
 
-    // Ok
     @Test
     public void parseG4tetrads() {
         try {
-            G4tetrads g4tetrads = objectMapper.readValue(file, G4tetrads.class);
+            G4tetradContainer g4tetrads = objectMapper.readValue(file, G4tetradContainer.class);
             for(G4tetrad g4tetrad : g4tetrads.getG4tetrads()) {
                 System.out.println(g4tetrad.toString());
             }
@@ -100,22 +95,10 @@ public class generalTest {
         }
     }
 
-    // Ok
     @Test
     public void parseDbnTest() {
-        /*
-        //objectMapper.configure(DeserializationFeature., true);
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNRESOLVED_OBJECT_IDS, false);
-        objectMapper.configure(DeserializationFeature.FAIL_ON_INVALID_SUBTYPE, false);
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        objectMapper.configure(DeserializationFeature.FAIL_ON_READING_DUP_TREE_KEY, false);
-
-         */
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        objectMapper.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, true);
-
         try {
-             dbn dbn = objectMapper.readValue(file, su.nextserver.dbn.class);
+             DbnContainer dbn = objectMapper.readValue(file, su.nextserver.DbnContainer.class);
              System.out.println(dbn.toString());
         } catch (IOException e) {
             e.printStackTrace();
@@ -126,7 +109,7 @@ public class generalTest {
     @Test
     public void parseChainsTest() {
         try {
-            Chains chains = objectMapper.readValue(file, Chains.class);
+            ChainContainer chains = objectMapper.readValue(file, ChainContainer.class);
             System.out.println(chains.toString());
         } catch (IOException e) {
             e.printStackTrace();
@@ -138,7 +121,7 @@ public class generalTest {
     @Test
     public void parseNtsTest() {
         try {
-            Nts nts = objectMapper.readValue(file, Nts.class);
+            NtContainer nts = objectMapper.readValue(file, NtContainer.class);
             System.out.println(nts.toString());
         } catch (IOException e) {
             e.printStackTrace();
@@ -149,7 +132,7 @@ public class generalTest {
     @Test
     public void parseHbonds() {
         try {
-            Hbonds hbonds = objectMapper.readValue(file, Hbonds.class);
+            HbondContainer hbonds = objectMapper.readValue(file, HbondContainer.class);
             for(Hbond hbond : hbonds.getHbonds()){
                 System.out.println(hbond.toString());
             }
@@ -167,16 +150,6 @@ public class generalTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    @Test
-    public void parsePairTest(){
-        try {
-            Pair[] langList = objectMapper.readValue(file,  Pair[].class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 
 }
