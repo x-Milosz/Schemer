@@ -28,7 +28,6 @@ public class AcceptanceTests {
 
     @Test
     public void parseAllFilesTest(){
-
         try {
             List<File> files =  Files.walk(path, 1)
                     .map(n -> n.toFile())
@@ -44,9 +43,36 @@ public class AcceptanceTests {
                 System.out.println(objectMapper.readValue(nFile, DbnContainer.class).toString());
                 System.out.println(objectMapper.readValue(nFile, NtContainer.class).toString());
                 System.out.println(objectMapper.readValue(nFile, HbondContainer.class).toString());
-                System.out.println(objectMapper.readValue(nFile, Metadata.class).toString());
+                System.out.println(objectMapper.readValue(nFile, MetadataContainer.class).toString());
+                Thread.sleep(1000);
             }
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void parseAllFilesByRootContainerTest() {
+        try {
+            List<File> files =  Files.walk(path, 1)
+                    .map(n -> n.toFile())
+                    .collect(Collectors.toList());
+            files.remove(0);
+            for(File nFile : files){
+                RootContainer rootContainer = objectMapper.readValue(nFile, RootContainer.class);
+                System.out.println(rootContainer.getPairs().toString());
+                System.out.println(rootContainer.getHelices().toString());
+                System.out.println(rootContainer.getMultiplets().toString());
+                System.out.println(rootContainer.getStacks().toString());
+                System.out.println(rootContainer.getSsSegments().toString());
+                System.out.println(rootContainer.getG4tetrads().toString());
+                System.out.println(rootContainer.getDbn().toString());
+                System.out.println(rootContainer.getNts().toString());
+                System.out.println(rootContainer.getHbonds().toString());
+                System.out.println(rootContainer.getMetadata().toString());
+                Thread.sleep(1000);
+            }
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }

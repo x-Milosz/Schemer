@@ -152,4 +152,14 @@ public class GeneralTests {
         }
     }
 
+    @Test
+    public void parseRootTest() {
+        try {
+            RootContainer rootContainer = objectMapper.readValue(file, RootContainer.class);
+            System.out.println(rootContainer.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
